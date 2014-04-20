@@ -5,19 +5,19 @@
 	<title>{{{site-title}}}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" type="text/css" media="screen" href="/css/cosmo.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/styles.css">
 </head>
 
 <body>
 
-<nav class="navbar navbar-default" role="navigation">
-<div class="navbar-header">
-<ul class="nav navbar-nav">
-{{#navbar}}
-<li><a href="{{{href}}}">{{label}}</a>
-{{/navbar}}
-</ul>
-</div>
-</nav>
+{{> navbar }}
 
-<div class="container">
+<div class="jumbotron">
+  <div class="highlight">
+    <img alt="Welcome to Hackerspace Singapore" class=banner src="/imgs/banner.png">
+  </div>
+</div>
+
+<div class="content-wrapper">
+  <div class="container">
 

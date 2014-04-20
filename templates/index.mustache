@@ -1,64 +1,22 @@
-<!DOCTYPE html>
-<html class="no-js">
-<head>
-	<meta charset="utf-8">
-	<title>{{{site-title}}}</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" type="text/css" media="screen" href="/css/cosmo.css">
-</head>
+{{> header }}
 
-<body>
-
-<nav class="navbar navbar-default" role="navigation">
-<div class="navbar-header">
-<ul class="nav navbar-nav">
-{{#navbar}}
-<li><a href="{{{href}}}">{{label}}</a>
-{{/navbar}}
-</ul>
-</div>
-</nav>
-
-<div class="jumbotron">
-
-  <div class="highlight">
-    <img alt="Welcome to Hackerspace Singapore" class=banner src="/imgs/banner.png">
+<div class="row">
+  <div class="col-md-6 events-block">
+    <h2>Upcoming Events</h2>
+    <ul>
+      {{#events}}
+        <li>
+          {{#URL}}<h4><a href="{{URL}}">{{Name}}</a></h4>{{/URL}}
+          {{^URL}}<h4>{{Name}}</h4>{{/URL}}
+          <time dateTime="{{#datetime}}{{When}}{{/datetime}}"
+           title="{{#datetime}}{{When}}{{/datetime}}">{{#datetime}}{{When}}{{/datetime}}</time>
+        </li>
+      {{/events}}
+    </ul>
   </div>
-
+  <div class="col-md-6">
+    <iframe src="/tweets.html" scrolling="no" frameborder="0" allowtransparency="true" width="520" height="600" style="margin-top: 27px; border: none; max-width: 100%; min-width: 180px;"></iframe>
+  </div>
 </div>
-
-<div class="container">
-
-<h2>Upcoming Events</h2>
-
-{{#events}}
-<p>
-{{#URL}}
-<strong><a href="{{URL}}">{{Name}}</a></strong>
-{{/URL}}
-{{^URL}}
-<strong>{{Name}}</strong>
-{{/URL}}
-<time dateTime="{{#datetime}}{{When}}{{/datetime}}">{{#datetime}}{{When}}{{/datetime}}</time>
-</p>
-{{/events}}
-
-<h2>Tweets</h2>
-
-<ul>
-{{{tweets}}}
-</ul>
-
-<script src="/js/moment.min.js"></script>
-<script>
-(function(moment){
-	var els = document.getElementsByTagName('time');
-	for (var i = 0, l = els.length; i < l; i++) {
-		els[i].innerHTML = moment(els[i].getAttribute('datetime')).fromNow();
-		}
-})(moment);
-</script>
-
-
 
 {{> footer }}
