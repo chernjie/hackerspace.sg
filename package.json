@@ -18,7 +18,7 @@
 		"url": "https://github.com/hackerspacesg/hackerspace.sg"
 	},
 	"dependencies" : {
-		"punch": "~0.5.40",
+		"punch-blog": "git+https://github.com/laktek/punch-blog.git#master",
 		"ical": "~0.3.1"
 	},
 	"license": "MIT",
